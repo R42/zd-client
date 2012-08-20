@@ -9,7 +9,8 @@
 //      GET /game/id - Returns the current game status.
 
 var Game = Backbone.Model.extend({
-    urlRoot: '/games',
+    
+    urlRoot: Config.baseURL + '/games',
 
     defaults: {
         score: 0,
@@ -19,14 +20,68 @@ var Game = Backbone.Model.extend({
     },
 
     initialize: function(){
-        this.on('sync', this.sync_success, this);
+        this.on('sync', this.syncSuccess, this);
+        this.on('played', this.playSuccess, this);
     },
 
-    // sync was successful. We need to update the game models
-    // according to the server response
-    sync_success: function(){
-        console.log('sync success');
-        
-        // Update our Play collection   
+    // Starts a new game with the currently defined nickname.
+    // A POST request is made to get the game current status.
+    start: function(){
+        // ID has to be set to null.
+        // Otherwise instead of a POST, a PUT would be sent.
+        this.set({id: null});
+
+        // Play
+        this.play('roll');
+    },
+
+    // Makes a new play by rolling the dice or stopping the turn.
+    // The action parameter has 2 possible values: 'roll' or 'stop'.
+    play: function(action){
+        this.set({action: action});
+
+        // Sync
+        this.save();
+    },
+
+    // Sets a new nickname.
+    setNickname: function(nickname){
+        this.set({nickname: nickname});
+    },
+
+    // Handler for the 'played' event.
+    playSuccess: function(){
+        if(this.get('action') === 'roll'){
+            // Let's update the Play model
+            this.currentPlay = new Play();
+            _.each(this.get('rolled'), function(elem){
+                var die = new Die(elem);
+                this.currentPlay.add(die);
+            }, this);
+
+            this.log();
+        }
+        else{
+            console.log('A wise decision (for a zombie). So far you ate ' + this.get('score') + ' delicious brains!');
+        }
+    },
+
+    // sync was successful. Let's notify who's interested.
+    syncSuccess: function(){
+        console.log('sync successful');
+
+        this.trigger('played'); 
+    },
+
+    log: function(){
+        if(this.get('shots').length >= 3){
+            console.log('BAM! That\'s too many shots in your zombie face...');
+        }
+        else{
+            this.currentPlay.log();
+            console.log('Until now you have:');
+            console.log(this.get('brains').length + ' brains');
+            console.log(this.get('shots').length + ' shots');
+        }
     }
 });

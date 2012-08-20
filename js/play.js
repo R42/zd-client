@@ -8,5 +8,12 @@ var Play = Backbone.Collection.extend({
 
     initialize: function(){
         
+    },
+
+    log: function(){
+    	console.log('Well Zombie, here\'s the result of the hunt:');
+    	_.each(this.models, function(die){
+    		die.log();
+    	});
     }
 });

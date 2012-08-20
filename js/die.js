@@ -6,5 +6,9 @@
 var Die = Backbone.Model.extend({
     initialize: function(){
         
+    },
+
+    log: function(){
+    	console.log('A ' + this.get('color') + ' ' + this.get('face'));
     }
 });
