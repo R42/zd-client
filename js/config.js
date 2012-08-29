@@ -3,5 +3,5 @@
 //      This are global configs.
 
 var Config = {
-	baseURL: 'http://localhost:3001'
+	baseURL: 'http://zd.r42.in'
 };
