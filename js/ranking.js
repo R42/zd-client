@@ -4,8 +4,7 @@
 //      It represents the game global player ranking.
 
 var Ranking = Backbone.Model.extend({
-    urlRoot: '/ranking',
-
+    
     initialize: function(){
         
     }

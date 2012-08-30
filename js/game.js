@@ -9,7 +9,6 @@
 //      GET /game/id - Returns the current game status.
 
 var Game = Backbone.Model.extend({
-    urlRoot: '/games',
 
     defaults: {
         score: 0,
@@ -19,14 +18,6 @@ var Game = Backbone.Model.extend({
     },
 
     initialize: function(){
-        this.on('sync', this.sync_success, this);
+    
     },
-
-    // sync was successful. We need to update the game models
-    // according to the server response
-    sync_success: function(){
-        console.log('sync success');
-        
-        // Update our Play collection   
-    }
 });
