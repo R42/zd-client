@@ -14,14 +14,15 @@ var Game = Backbone.Model.extend({
 
     defaults: {
         score: 0,
+        vp: 0,
+        rolled: [],
         brains: [],
         shots: [],
         runners: []
     },
 
     initialize: function(){
-        this.on('sync', this.syncSuccess, this);
-        this.on('played', this.playSuccess, this);
+        this.on('sync', this.playSuccess, this);
     },
 
     // Starts a new game with the currently defined nickname.
@@ -49,6 +50,11 @@ var Game = Backbone.Model.extend({
         this.set({nickname: nickname});
     },
 
+    // Returns the current play model
+    getCurrentPlay: function(){
+        return this.get('action') === 'roll' ? this.currentPlay : null;
+    },
+
     // Handler for the 'played' event.
     playSuccess: function(){
         if(this.get('action') === 'roll'){
@@ -60,17 +66,13 @@ var Game = Backbone.Model.extend({
             }, this);
 
             this.log();
+
+            this.trigger('played-rolled'); 
         }
         else{
             console.log('A wise decision (for a zombie). So far you ate ' + this.get('score') + ' delicious brains!');
+            this.trigger('played-stopped');
         }
-    },
-
-    // sync was successful. Let's notify who's interested.
-    syncSuccess: function(){
-        console.log('sync successful');
-
-        this.trigger('played'); 
     },
 
     log: function(){
