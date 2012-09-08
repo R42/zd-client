@@ -2,14 +2,14 @@
 
 //    This is the Hud view.
 //    It will show the status of the game -
-//    the current number os brains and shots and vp.
+//    the current number of brains, shots and vp.
 
 var HudView = Backbone.View.extend({
   template: _.template($('#hudTemplate').html()),
   className: 'hud',
 
   initialize: function(){
-    this.model.on('change', this.render, this);
+    this.model.on('played', this.render, this);
   },
 
   render: function(){

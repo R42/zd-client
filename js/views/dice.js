@@ -14,7 +14,7 @@ var DiceView = Backbone.View.extend({
       die.$el.appendTo(this.$el);
     }
 
-    this.model.on('change', this.render, this);
+    this.model.on('played', this.render, this);
   },
 
   render: function(){
