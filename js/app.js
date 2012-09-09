@@ -5,7 +5,5 @@
 var gameModel = new Game({ nickname: 'Threepwood' });
 var gameView = new GameView({ model: gameModel });
 
-gameView.render();
-gameView.$el.prependTo('body');
+gameView.render().$el.prependTo('body');
 
-// gameModel.start();
