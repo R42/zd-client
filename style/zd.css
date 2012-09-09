@@ -1,0 +1,262 @@
+@font-face {
+  font-family: 'Bebas';
+  src: url('fonts/bebas/BEBAS___-webfont.eot');
+  src: url('fonts/bebas/BEBAS___-webfont.eot?#iefix') format('embedded-opentype'),
+       url('fonts/bebas/BEBAS___-webfont.woff') format('woff'),
+       url('fonts/bebas/BEBAS___-webfont.ttf') format('truetype'),
+       url('fonts/bebas/BEBAS___-webfont.svg#BebasRegular') format('svg');
+}
+
+@font-face {
+  font-family: 'Boycott';
+  src: url('fonts/boycott/BOYCOTT_-webfont.eot');
+  src: url('fonts/boycott/BOYCOTT_-webfont.eot?#iefix') format('embedded-opentype'),
+       url('fonts/boycott/BOYCOTT_-webfont.woff') format('woff'),
+       url('fonts/boycott/BOYCOTT_-webfont.ttf') format('truetype'),
+       url('fonts/boycott/BOYCOTT_-webfont.svg#BoycottRegular') format('svg');
+}
+
+.zd {
+  font-family: Bebas, sans-serif;
+  color: #C1272C;
+  background-image: url("img/bg.png");
+  display: block;
+
+  /* small game */
+  width: 600px;
+  margin: 50px auto;
+  border-radius: 100px;
+  overflow: hidden;
+}
+
+.zd .title {
+  font-family: Boycott, serif;
+  font-size: 70px;
+  font-weight: normal;
+  text-transform: uppercase;
+  background-image: url("img/bar.png");
+  background-position: bottom;
+  background-size: contain;
+  background-repeat: no-repeat;
+  width: 400px;
+  display: block;
+  text-align: center;
+  margin: auto;
+  padding: 50px 30px 10px 30px;
+}
+
+.zd > div {
+  padding: 20px 100px 100px 100px;
+  background-image: url("img/footer.png");
+  background-position: bottom;
+  background-size: contain;
+  background-repeat: no-repeat;
+  margin: auto;
+  text-align: center;
+}
+
+.zd .ui {
+  width: 300px;
+  display: inline-block;
+}
+
+.zd .hud {
+  text-align: center;
+}
+
+.zd .hud > span {
+  display: inline-block;
+  background-repeat: no-repeat;
+  background-color: transparent;
+  border-bottom: 1px solid #754C25;
+
+  background-size: 18px;
+  height: 23px;
+  padding: 0 0 5px 28px;
+  font-size: 15px;
+
+  margin-right: 40px;
+  vertical-align: middle;
+}
+
+.zd .hud > span:last-child {
+  margin-right: 0;
+}
+
+.zd .hud .vp {
+  background-image: url("img/hud/vp.png");
+  background-size: 25px;
+  background-position: 0 6px;
+  height: 33px;
+  padding: 2px 0 0 30px;
+  font-size: 25px;
+  border-bottom: none;
+}
+
+.zd .hud .brains {
+  background-image: url("img/hud/brain.png");
+  background-position: 0 4px;
+}
+
+.zd .hud .brains .remaining {
+  color: #841720;
+}
+
+.zd .hud .shots {
+  background-image: url("img/hud/shot.png");
+  background-position: 0 1px;
+}
+
+.zd .dice {
+  background-image: url("img/dice_box.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-color: transparent;
+  height: 88px;
+  margin: 15px 0;
+  padding: 42px 0 0 13px;
+}
+
+.zd .dice .die {
+  background-repeat: no-repeat;
+  background-color: transparent;
+  background-position: center;
+
+  height: 50px;
+  width: 50px;
+  margin-right: 40px;
+  display: inline-block;
+  color: transparent;
+}
+
+.zd .dice .die:last-child {
+  margin-right: 0;
+  margin-left: 0px;
+}
+
+.zd .die.brain.green { background-image: url("img/die/brain_green.png"); }
+.zd .die.brain.red { background-image: url("img/die/brain_red.png"); }
+.zd .die.brain.yellow { background-image: url("img/die/brain_yellow.png"); }
+.zd .die.shot.green { background-image: url("img/die/shot_green.png"); }
+.zd .die.shot.red { background-image: url("img/die/shot_red.png"); }
+.zd .die.shot.yellow { background-image: url("img/die/shot_yellow.png"); }
+.zd .die.runner.green { background-image: url("img/die/runner_green.png"); }
+.zd .die.runner.red { background-image: url("img/die/runner_red.png"); }
+.zd .die.runner.yellow { background-image: url("img/die/runner_yellow.png"); }
+
+.zd .die.rolling {
+  background-image: url("img/load.gif");
+}
+
+.zd .controls {
+  height: 75px;
+  position: relative;
+}
+
+.zd button.roll, .zd button.stop {
+  background-image: url("img/button.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-color: transparent;
+  width: 130px;
+  height: 75px;
+  border: none;
+  font-family: Boycott, serif;
+  font-size: 30px;
+  font-weight: normal;
+  cursor: pointer;
+  position: absolute;
+}
+
+.zd button.roll {
+  color: #C1272C;
+  left: 8px;
+}
+
+.zd button.roll:hover {
+  font-weight: normal;
+  -webkit-transform: rotateZ(3deg);
+  -moz-transform: rotateZ(3deg);
+  transform: rotateZ(3deg);
+}
+.zd button.roll:active {
+  font-weight: normal;
+  -webkit-transform: rotateZ(8deg);
+  -moz-transform: rotateZ(8deg);
+  transform: rotateZ(8deg);
+}
+
+.zd .stop {
+  color: #734C1A;
+  right: 8px;
+}
+
+.zd button.stop:hover {
+  -webkit-transform: rotateZ(-3deg);
+  -moz-transform: rotateZ(-3deg);
+  transform: rotateZ(-3deg);
+}
+.zd button.stop:active {
+  -webkit-transform: rotateZ(-5deg);
+  -moz-transform: rotateZ(-5deg);
+  transform: rotateZ(-5deg);
+}
+
+.zd .die.rolling {
+  -webkit-animation-duration: 1s;
+  -webkit-animation-name: dieCycle, roll;
+  -webkit-animation-iteration-count: infinite;
+  -webkit-animation-direction: normal;
+}
+
+@-webkit-keyframes roll {
+  0% { -webkit-transform: rotate3d(1, 0, 0, 0deg); }
+  2% { -webkit-transform: rotate3d(1, 0, 0, 45deg); }
+  5% { -webkit-transform: rotate3d(1, 0, 0, 90deg); }
+  8% { -webkit-transform: rotate3d(1, 0, 0, 135deg); }
+  11% { -webkit-transform: rotate3d(1, 0, 0, 180deg); }
+  13% { -webkit-transform: rotate3d(1, 0, 0, 225deg); }
+  16% { -webkit-transform: rotate3d(1, 0, 0, 270deg); }
+  19% { -webkit-transform: rotate3d(1, 0, 0, 315deg); }
+  22% { -webkit-transform: rotate3d(1, 0, 0, 0deg); }
+  25% { -webkit-transform: rotate3d(1, 0, 0, 45deg); }
+  27% { -webkit-transform: rotate3d(1, 0, 0, 90deg); }
+  30% { -webkit-transform: rotate3d(1, 0, 0, 135deg); }
+  33% { -webkit-transform: rotate3d(1, 0, 0, 180deg); }
+  36% { -webkit-transform: rotate3d(1, 0, 0, 225deg); }
+  38% { -webkit-transform: rotate3d(1, 0, 0, 270deg); }
+  41% { -webkit-transform: rotate3d(1, 0, 0, 315deg); }
+  44% { -webkit-transform: rotate3d(1, 0, 0, 0deg); }
+  47% { -webkit-transform: rotate3d(1, 0, 0, 45deg); }
+  50% { -webkit-transform: rotate3d(1, 0, 0, 90deg); }
+  52% { -webkit-transform: rotate3d(1, 0, 0, 135deg); }
+  55% { -webkit-transform: rotate3d(1, 0, 0, 180deg); }
+  58% { -webkit-transform: rotate3d(1, 0, 0, 225deg); }
+  61% { -webkit-transform: rotate3d(1, 0, 0, 270deg); }
+  63% { -webkit-transform: rotate3d(1, 0, 0, 315deg); }
+  66% { -webkit-transform: rotate3d(1, 0, 0, 0deg); }
+  69% { -webkit-transform: rotate3d(1, 0, 0, 45deg); }
+  72% { -webkit-transform: rotate3d(1, 0, 0, 90deg); }
+  75% { -webkit-transform: rotate3d(1, 0, 0, 135deg); }
+  77% { -webkit-transform: rotate3d(1, 0, 0, 180deg); }
+  80% { -webkit-transform: rotate3d(1, 0, 0, 225deg); }
+  83% { -webkit-transform: rotate3d(1, 0, 0, 270deg); }
+  86% { -webkit-transform: rotate3d(1, 0, 0, 315deg); }
+  88% { -webkit-transform: rotate3d(1, 0, 0, 0deg); }
+  91% { -webkit-transform: rotate3d(1, 0, 0, 45deg); }
+  94% { -webkit-transform: rotate3d(1, 0, 0, 90deg); }
+  97% { -webkit-transform: rotate3d(1, 0, 0, 135deg); }
+  100% { -webkit-transform: rotate3d(1, 0, 0, 180deg); }
+}
+
+@-webkit-keyframes dieCycle {
+  0% { background-image: url("img/die/brain_green.png"); }
+  12% { background-image: url("img/die/runner_yellow.png"); }
+  25% { background-image: url("img/die/shot_red.png"); }
+  37% { background-image: url("img/die/runner_green.png"); }
+  50% { background-image: url("img/die/shot_yellow.png"); }
+  62% { background-image: url("img/die/brain_red.png"); }
+  75% { background-image: url("img/die/shot_green.png"); }
+  87% { background-image: url("img/die/brain_yellow.png"); }
+  100% { background-image: url("img/die/runner_red.png"); }
+}

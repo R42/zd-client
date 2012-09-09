@@ -2,8 +2,9 @@
 
 //		This is the entry point for the application
 
-var gameModel = new Game({ nickname: 'Threepwood' });
-var gameView = new GameView({ model: gameModel });
+$(function() {
+  var gameModel = new Game({ nickname: 'Threepwood' });
+  var gameView = new GameView({ model: gameModel });
 
-gameView.render();
-$('.game-area').html(gameView.el);
+  gameView.render().$el.prependTo('body');
+});

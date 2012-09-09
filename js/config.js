@@ -3,5 +3,9 @@
 //      This are global configs.
 
 var Config = {
-	baseURL: 'http://zd.r42.in'
+	baseURL: 'https://zd.r42.in'
+};
+
+_.templateSettings = {
+  interpolate : /\{\{(.+?)\}\}/g
 };

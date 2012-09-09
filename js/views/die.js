@@ -4,17 +4,40 @@
 //		It shows a single die. Simple huh?
 
 var DieView = Backbone.View.extend({
+  className: 'die',
+  tagName: 'span',
 
-	tagName: 'li',
-	
-	template: _.template(
-		'<span>A <%= color %> <%= face %></span>'
-	),
+  initialize: function() {
+  },
 
-	render: function(){
-		var attributes = this.model.toJSON();
-		this.$el.html(this.template(attributes));
+  hide: function() {
+  	this.$el.removeClass('green');
+  	this.$el.removeClass('red');
+  	this.$el.removeClass('yellow');
+  	this.$el.removeClass('shot');
+  	this.$el.removeClass('brain');
+  	this.$el.removeClass('runner');
+  	this.$el.removeClass('rolling');
+  },
 
-		return this;
-	}
+  rollTo: function(die) {
+  	this.roll();
+  	var self = this;
+  	setTimeout(function() { self.setFace(die); }, Math.random() * 1000 + 500);
+  },
+
+  setFace: function(die) {
+  	this.hide();
+  	this.$el.removeClass('rolling');
+  	this.$el.addClass(die.get('color')).addClass(die.get('face'));
+  },
+
+  roll: function() {
+  	this.hide();
+  	this.$el.addClass('rolling');
+  },
+
+  render: function() {
+    return this;
+  }
 });

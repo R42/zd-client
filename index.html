@@ -2,30 +2,61 @@
 <html>
 	<head>
 		<title>Play Zombie Dice! Braaaaaaains</title>
+
+		<style type="text/css">
+			body {
+				background-color: #201613;
+				width: 100%;
+				margin: 0;
+			}
+		</style>
+		<link rel="stylesheet" type="text/css" href="style/zd.css" />
+
+		<!-- templates -->
+		<script type="text/template" id="gameTemplate">
+			<h1 class="title">Zombie Dice</h1>
+			<div>
+				<div class="ui">
+				</div>
+			</div>
+		</script>
+		<script type="text/template" id="hudTemplate">
+			<span class="vp">{{vp}}</span>
+			<span class="brains">
+				{{brains}}
+				<span class="remaining">/{{remaining}}</span>
+			</span>
+			<span class="shots">{{shots}}</span>
+		</script>
+		<script type="text/template" id="controlsTemplate">
+			<button class="roll">Roll</button>
+			<button class="stop">Stop</button>
+		</script>
+
+		<!-- libs -->
+		<script type="text/javascript" src="lib/underscore.js"></script>
+		<script type="text/javascript" src="lib/json2.js"></script>
+		<script type="text/javascript" src="lib/jquery-1.8.0.min.js"></script>
+		<script type="text/javascript" src="lib/backbone.js"></script>
+
+		<!-- models -->
+		<script type="text/javascript" src="js/config.js"></script>
+		<script type="text/javascript" src="js/models/die.js"></script>
+		<script type="text/javascript" src="js/models/play.js"></script>
+		<script type="text/javascript" src="js/models/game.js"></script>
+		<script type="text/javascript" src="js/models/ranking.js"></script>
+
+		<!-- views -->
+		<script type="text/javascript" src="js/views/hud.js"></script>
+		<script type="text/javascript" src="js/views/die.js"></script>
+		<script type="text/javascript" src="js/views/dice.js"></script>
+		<script type="text/javascript" src="js/views/controls.js"></script>
+		<script type="text/javascript" src="js/views/game.js"></script>
+
+		<!-- app -->
+		<script type="text/javascript" src="js/app.js"></script>
 	</head>
 
 	<body>
-		<div class="game-area"></div>
 	</body>
-
-	<!-- libs -->
-	<script type="text/javascript" src="lib/underscore.js"></script>
-	<script type="text/javascript" src="lib/json2.js"></script>
-	<script type="text/javascript" src="lib/jquery-1.8.0.min.js"></script>
-	<script type="text/javascript" src="lib/backbone.js"></script>
-
-	<!-- models -->
-	<script type="text/javascript" src="js/config.js"></script>
-	<script type="text/javascript" src="js/models/die.js"></script>
-	<script type="text/javascript" src="js/models/play.js"></script>
-	<script type="text/javascript" src="js/models/game.js"></script>
-	<script type="text/javascript" src="js/models/ranking.js"></script>
-
-	<!-- views -->
-	<script type="text/javascript" src="js/views/die.js"></script>
-	<script type="text/javascript" src="js/views/play.js"></script>
-	<script type="text/javascript" src="js/views/game.js"></script>
-
-	<!-- app -->
-	<script type="text/javascript" src="js/app.js"></script>
 </html>

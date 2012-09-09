@@ -66,13 +66,12 @@ var Game = Backbone.Model.extend({
             }, this);
 
             this.log();
-
-            this.trigger('played-rolled'); 
         }
         else{
             console.log('A wise decision (for a zombie). So far you ate ' + this.get('score') + ' delicious brains!');
-            this.trigger('played-stopped');
         }
+
+        this.trigger('played'); 
     },
 
     log: function(){
