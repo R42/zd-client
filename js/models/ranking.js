@@ -8,5 +8,9 @@ var Ranking = Backbone.Model.extend({
 
     initialize: function(){
         
+    },
+
+    update: function(){
+    	this.fetch();
     }
 });
