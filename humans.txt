@@ -1,0 +1,18 @@
+/* TEAM */
+
+  Developer: João Duarte
+  Twitter: @jdduarte
+  Email: jd [at] r42.in
+  Location: Lisbon, Portugal
+
+  Developer: Igor Soarez
+  Twitter: @igorsoarez
+  Email: soarez [at] r42.in
+  Location: Lisbon, Portugal
+
+/* THANKS */
+
+  Designer: João Ricardo Machado
+  Twitter: @joaorm
+  Email: contato@joaoricardomachado.com
+  Website: http://www.joaoricardomachado.com/
