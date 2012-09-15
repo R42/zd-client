@@ -17,6 +17,25 @@
 		<link rel="stylesheet" type="text/css" href="style/zd.css" />
 
 		<!-- templates -->
+		<script type="text/template" id="welcomeTemplate">
+			<h1 class="title">Zombie Dice</h1>
+			<div>
+				<div class="nicknameGroup">
+					<span class="nicknameLabel">NAME:</span>
+					<input type="text" class="nickname" />
+				</div>
+				<a href="#game" class="start">Start</a>
+			</div>
+		</script>
+		<script type="text/template" id="rankingTemplate">
+			<h1 class="title">Zombie Rank</h1>
+			<div>
+				<div class="loading"></div>
+				<ol class="list">
+				</ol>
+				<a href="javascript:history.back()" class="back">Back</a>
+			</div>
+		</script>
 		<script type="text/template" id="gameTemplate">
 			<h1 class="title">Zombie Dice</h1>
 			<div>
@@ -56,11 +75,14 @@
 		<script type="text/javascript" src="js/views/dice.js"></script>
 		<script type="text/javascript" src="js/views/controls.js"></script>
 		<script type="text/javascript" src="js/views/game.js"></script>
+		<script type="text/javascript" src="js/views/welcome.js"></script>
+		<script type="text/javascript" src="js/views/ranking.js"></script>
 
-		<!-- app -->
-		<script type="text/javascript" src="js/app.js"></script>
+		<!-- router -->
+		<script type="text/javascript" src="js/router.js"></script>
 	</head>
 
 	<body>
+		<a href="#ranking" class="rankingLink">Ranking</a>
 	</body>
 </html>
