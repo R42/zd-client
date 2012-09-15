@@ -23,10 +23,12 @@
   display: block;
 
   /* small game */
+  /*
   width: 600px;
   margin: 50px auto;
   border-radius: 100px;
   overflow: hidden;
+  */
 }
 
 .zd .title {
@@ -51,6 +53,7 @@
   background-position: bottom;
   background-size: contain;
   background-repeat: no-repeat;
+  min-height: 270px;
   margin: auto;
   text-align: center;
 }
@@ -153,50 +156,81 @@
   position: relative;
 }
 
-.zd button.roll, .zd button.stop {
+.zd button.roll, .zd button.stop, .zd .start, .zd .back {
   background-image: url("img/button.png");
   background-size: contain;
   background-repeat: no-repeat;
   background-color: transparent;
-  width: 130px;
-  height: 75px;
   border: none;
+  display: block;
   font-family: Boycott, serif;
-  font-size: 30px;
   font-weight: normal;
   cursor: pointer;
+  text-decoration: none;
+}
+
+.zd button.roll, .zd button.stop, .zd .back {
+  width: 130px;
+  height: 75px;
+  line-height: 75px;
+  font-size: 30px;
+}
+
+.zd .start {
+  width: 150px;
+  height: 89px;
+  line-height: 89px;
+  font-size: 30px;
+}
+
+.zd .start, .zd .back {
+  margin: auto;
+}
+
+.zd button.roll, .zd button.stop, .zd .back {
+  width: 130px;
+  height: 75px;
+}
+
+.zd button.roll, .zd button.stop {
   position: absolute;
 }
 
-.zd button.roll {
+.zd button.roll, .zd .start {
   color: #C1272C;
+}
+
+.zd button.stop, .zd .back {
+  color: #734C1A;
+}
+
+.zd button.roll {
   left: 8px;
 }
 
-.zd button.roll:hover {
+.zd button.stop {
+  right: 8px;
+}
+
+.zd button.roll:hover, .zd .start:hover {
   font-weight: normal;
   -webkit-transform: rotateZ(3deg);
   -moz-transform: rotateZ(3deg);
   transform: rotateZ(3deg);
 }
-.zd button.roll:active {
+.zd button.roll:active, .zd .start:active {
   font-weight: normal;
   -webkit-transform: rotateZ(8deg);
   -moz-transform: rotateZ(8deg);
   transform: rotateZ(8deg);
 }
 
-.zd .stop {
-  color: #734C1A;
-  right: 8px;
-}
-
-.zd button.stop:hover {
+.zd button.stop:hover, .zd .back:hover {
   -webkit-transform: rotateZ(-3deg);
   -moz-transform: rotateZ(-3deg);
   transform: rotateZ(-3deg);
 }
-.zd button.stop:active {
+.zd button.stop:active, .zd .back:active {
   -webkit-transform: rotateZ(-5deg);
   -moz-transform: rotateZ(-5deg);
   transform: rotateZ(-5deg);
@@ -259,4 +293,97 @@
   75% { background-image: url("img/die/shot_green.png"); }
   87% { background-image: url("img/die/brain_yellow.png"); }
   100% { background-image: url("img/die/runner_red.png"); }
+}
+
+.zd .nicknameGroup {
+  display: block;
+  margin: 30px auto ;
+}
+
+.zd .nicknameLabel {
+  font-size: 23px;
+  margin-right: 15px;
+}
+
+.zd .nickname {
+  background-color: transparent;;
+  border-radius: 0px;
+  border width: 0;
+  border-style: none;
+  padding: 10px 20px;
+  outline: none;
+  width: 200px;
+  font-family: Bebas, serif;
+  font-size: 25px;
+  font-weight: normal;  
+  color: #C1272C;
+  box-shadow: 0px 0px 100px 10px #201613;
+}
+
+::selection {
+  background:#201613; 
+  color:yellow;
+}
+
+::-moz-selection {
+  background:#201613; 
+  color:yellow;
+}
+
+::-webkit-selection {
+  background:#201613; 
+  color:yellow;
+}
+
+.zd .loading, .zd .list {
+  width: 390px;
+  min-height: 222px;
+  margin: 20px auto;
+  padding: 30px;
+}
+
+
+.zd .loading {
+  background-image: url("img/zombie.gif");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-color: transparent;
+  border-radius: 50px;
+  border-color: transparent;
+  border-width: 0;
+  border-style: solid;
+  line-height: 222px;
+  font-size: 50px;
+  color: #936C3A;
+  text-shadow: 3px 3px 4px #201613;
+  box-shadow: 0px 0px 10px 10px #201613;
+  opacity:0.7;
+  filter:alpha(opacity=70);
+}
+
+.zd .list {
+  text-align: center;
+  list-style-position:outside;
+  display: block;
+  width: 280px;
+}
+
+.zd .list li {
+  margin: 10px 0;
+  box-shadow: 0px 0px 100px 1px #201613;
+}
+
+.rankingLink {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  font-family: Bebas;
+  text-decoration: none;
+  color: #936C3A;
+  text-shadow: 3px 3px 10px #201613;
+}
+
+.rankingLink:hover {
+  color: #C1272C;
+  text-decoration: underline;
 }
