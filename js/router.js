@@ -33,7 +33,7 @@ var ZdRouter = Backbone.Router.extend({
 
   ranking: function() {
     $('body > div').hide();
-    this.rankingView.$el.show();
+    this.rankingView.render().$el.show();
   }
 });
     
