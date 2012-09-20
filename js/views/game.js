@@ -5,7 +5,7 @@
 
 var GameView = Backbone.View.extend({
 
-	className: 'zd',
+	className: 'zd game',
 
 	initialize: function(){
     this.hud = new HudView({model: this.model});
