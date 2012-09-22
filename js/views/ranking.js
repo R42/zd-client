@@ -13,7 +13,8 @@ var RankingEntryView = Backbone.View.extend({
 });
 
 var RankingView = Backbone.View.extend({
-  className: 'zd',
+
+  className: 'zd ranking',
 
   render: function(){
     

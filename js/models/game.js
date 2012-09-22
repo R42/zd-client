@@ -9,7 +9,7 @@
 //      GET /game/id - Returns the current game status.
 
 var Game = Backbone.Model.extend({
-    
+
     urlRoot: Config.baseURL + '/games',
 
     defaults: {

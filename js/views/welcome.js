@@ -4,7 +4,7 @@
 
 var WelcomeView = Backbone.View.extend({
 
-  className: 'zd',
+  className: 'zd welcome',
 
   randomZombieName: function() {
     var zombieNames = ['Thriller','Buffy','Left 5 Dead','Omega Man','Resident','Stubbs','Necromorph', 'Brainz','Joe Zombie','Rob','Legend','Legion','Crypt keeper','Gilgamesh','Ishtar','Chthulhu ','Draugr','Jikininki','Zombi','Zom-A','Herbert','Walker','Jay','Pet er','Nard-dog','Beardley','Ky Ra','Romero','Juliet','Lovecraft','Cra ven','Dellamorte','Max','Yogurt','Bombie','Inferi','Doomsday'];
