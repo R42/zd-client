@@ -3,8 +3,11 @@
 //      This is the Ranking model.
 //      It represents the game global player ranking.
 
-var Ranking = Backbone.Model.extend({
-    
+var Position = Backbone.Model.extend({})
+
+var Ranking = Backbone.Collection.extend({
+    model: Position,
+
     initialize: function(){
         
     }
