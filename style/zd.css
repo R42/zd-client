@@ -23,10 +23,12 @@
   display: block;
 
   /* small game */
+  /*
   width: 600px;
   margin: 50px auto;
   border-radius: 100px;
   overflow: hidden;
+  */
 }
 
 .zd .title {
