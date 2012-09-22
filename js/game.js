@@ -9,15 +9,8 @@
 //      GET /game/id - Returns the current game status.
 
 var Game = Backbone.Model.extend({
-    
-    urlRoot: Config.baseURL + '/games',
 
-    defaults: {
-        score: 0,
-        brains: [],
-        shots: [],
-        runners: []
-    },
+    urlRoot: Config.baseURL + '/games',
 
     initialize: function(){
         this.on('sync', this.syncSuccess, this);
