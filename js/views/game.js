@@ -14,6 +14,7 @@ var GameView = Backbone.View.extend({
 	},
 
 	render: function(){
+    this.$el.empty();
     this.$el.html($('#gameTemplate').html());
     this.$('.ui').append(this.hud.render().$el);
     this.$('.ui').append(this.dice.render().$el);

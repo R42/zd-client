@@ -51,11 +51,15 @@
 			<button class="roll">Roll</button>
 			<button class="stop">Stop</button>
 		</script>
+		<script type="text/template" id="notificationTemplate">
+			{{nickname}} {{message}}
+		</script>
 
 		<!-- libs -->
 		<script type="text/javascript" src="lib/underscore.js"></script>
 		<script type="text/javascript" src="lib/jquery-1.8.0.min.js"></script>
 		<script type="text/javascript" src="lib/backbone.js"></script>
+		<script type="text/javascript" src="https://zd.r42.in/socket.io/socket.io.js"></script>
 
 		<!-- models -->
 		<script type="text/javascript" src="js/config.js"></script>
@@ -63,6 +67,7 @@
 		<script type="text/javascript" src="js/models/play.js"></script>
 		<script type="text/javascript" src="js/models/game.js"></script>
 		<script type="text/javascript" src="js/models/ranking.js"></script>
+		<script type="text/javascript" src="js/models/notifications.js"></script>
 
 		<!-- views -->
 		<script type="text/javascript" src="js/views/hud.js"></script>
@@ -72,6 +77,7 @@
 		<script type="text/javascript" src="js/views/game.js"></script>
 		<script type="text/javascript" src="js/views/welcome.js"></script>
 		<script type="text/javascript" src="js/views/ranking.js"></script>
+		<script type="text/javascript" src="js/views/social.js"></script>
 
 		<!-- router -->
 		<script type="text/javascript" src="js/router.js"></script>

@@ -387,3 +387,15 @@
   color: #C1272C;
   text-decoration: underline;
 }
+
+.socialBox {
+  position: absolute;
+  top: 5px;
+  left: 5px;
+}
+
+.socialBox .notification {
+  color: #754C25;
+  font-family: Bebas;
+  margin: 4px;
+}
