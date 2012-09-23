@@ -14,25 +14,27 @@ var ZdRouter = Backbone.Router.extend({
     this.gameView = new GameView({ model: this.gameModel });
     this.welcomeView = new WelcomeView();
     this.rankingView = new RankingView();
+    this.socialView = new SocialView();
 
     this.gameView.render().$el.hide().prependTo('body');
     this.welcomeView.render().$el.hide().prependTo('body');
     this.rankingView.render().$el.hide().prependTo('body');
+    this.socialView.render().$el.appendTo('body');
   },
 
   root: function() {
-    $('body > div').hide();
+    $('body > div.zd').hide();
     this.welcomeView.$el.show();
   },
 
   game: function() {
     this.gameModel.set({ nickname: this.welcomeView.getNickname() });
-    $('body > div').hide();
+    $('body > div.zd').hide();
     this.gameView.$el.show();
   },
 
   ranking: function() {
-    $('body > div').hide();
+    $('body > div.zd').hide();
     this.rankingView.render().$el.show();
   }
 });
