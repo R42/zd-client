@@ -1,4 +1,3 @@
-
 # Part1
 
 ### Objective: Sync with http://zd.r42.in.
@@ -7,13 +6,16 @@ Use Backbone's API on [Syncing](http://backbonejs.org/#Sync).
 
 ### Write the code to sync the Game
 
-a. On the Game model
-	1. Define `urlRoot` with `'https://zd.r42.in/games'`
-	2. Define a method `start` that sets `id` to `null` and calls `this.save`
-	3. Define a method `play` that recieves with an argument that is either `'roll'` or `'stop'`, sets it as `action` and calls `this.save()`
-	4. Register a callback on the `sync` event that creates a `Play` (collection) of the rolled `Die` if the action was `roll`, logs some information the play and then triggers a custom event `played`.
-b. On the Ranking model
-	1. Define `url` with `'https://zd.r42.in/ranking'`
+###### On the Game model
+
+1. Define `urlRoot` with `'https://zd.r42.in/games'`
+2. Define a method `start` that sets `id` to `null` and calls `this.save`
+3. Define a method `play` that recieves with an argument that is either `'roll'` or `'stop'`, sets it as `action` and calls `this.save()`
+4. Register a callback on the `sync` event that creates a `Play` (collection) of the rolled `Die` if the action was `roll`, logs some information the play and then triggers a custom event `played`.
+
+###### On the Ranking model
+
+1. Define `url` with `'https://zd.r42.in/ranking'`
 
 #### Play!
 
