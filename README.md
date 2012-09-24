@@ -21,35 +21,12 @@ Create these views:
 - **ControlsView**
 	- Renders two buttons, one that says "roll" and one that says "stop"
 	- Registers callbacks for the `click` event on each button, that calls the model's `play` method with the corresponding action
-- **DiceView **
+- **DiceView**
 	- Contains three inner DieView
 	- Registers `render` on the model's `played` event
 	- The `render` method delegates the display of each rolled die to each inner view
 - **DieView**
 	- Renders `color` and `face` for a Die
-
-### Write the code to sync the Game
-
-###### On the Game model
-
-1. Define `urlRoot` with `'https://zd.r42.in/games'`
-2. Define a method `start` that sets `id` to `null` and calls `this.save`
-3. Define a method `play` that recieves with an argument that is either `'roll'` or `'stop'`, sets it as `action` and calls `this.save()`
-4. Register a callback on the `sync` event that creates a `Play` (collection) of the rolled `Die` if the action was `roll`, logs some information the play and then triggers a custom event `played`.
-
-###### On the Ranking model
-
-1. Define `url` with `'https://zd.r42.in/ranking'`
-
-#### Play!
-
-In your browser's console:
-
-1. Create an instance of `Game`
-2. Set a nickname
-3. Call `start`
-4. Call `play` with `roll`
-5. Celebrate! -- You've just made your first play :D
 
 ## Useful links
 
