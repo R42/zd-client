@@ -1,31 +1,33 @@
-# Boilerplate
-### Objective: Develop the models for [this API][API].
-   
-From the [API], we can identify some entities:
+# Part0 - Road to Part1
 
-- Die
-- Play (one play) - Collection of Die
-- Game
-- Position
-- Ranking - Collection of Positions
+### Objective: Sync with http://zd.r42.in.
 
-### Implement models for these entities
+Use Backbone's API on [Syncing](http://backbonejs.org/#Sync).
 
-1. Define the models in JavaScript files
-2. Refer to [backbone.js' API][Backbone] on
-	- [Models](http://backbonejs.org/#Model)
-	- [Collections](http://backbonejs.org/#Collection)
-	- Set the defaults attributes for the Game model
-3. Include scripts in the index.html
-4. Open index.html in your browser with the debugger
-5. Use the console and try some stuff:
-	- Create an instance with specific attributes
-	- Register a callback on a changed event
-	- Set an attribute to a different value
-	- Try setting an attribute that you made up and see what happens
-	- Create a collection and add some elements to it
-	- Try some of the [Underscore] methods on the collection
-6. Define a `log` on the models to show the status
+### Write the code to sync the Game
+
+###### On the Game model
+
+1. Define `urlRoot` with `'https://zd.r42.in/games'`
+2. Define a method `start` that sets `id` to `null` and calls `this.save`
+3. Define a method `play` that recieves with an argument that is either `'roll'` or `'stop'`, sets it as `action` and calls `this.save()`
+4. Register a callback on the `sync` event that creates a `Play` (collection) of the rolled `Die` if the action was `roll`, logs some information the play and then triggers a custom event `played`.
+
+###### On the Ranking model
+
+1. Define `url` with `'https://zd.r42.in/ranking'`
+
+#### Play!
+
+In your browser's console:
+
+1. Create an instance of `Game`
+2. Set a nickname
+3. Call `start`
+4. Call `play` with `roll`
+5. Celebrate! -- You've just made your first play :D
+
+#### [When you're ready advance to the next part][Part1]
 
 ## Useful links
 
