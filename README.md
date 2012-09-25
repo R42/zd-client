@@ -1,32 +1,22 @@
+# Part3
 
-# Part2
+### Objective: Add client-side routing
 
-### Objective: Create views to interact with the models
+Create two more views:
 
-Use Backbone's API on [Views](http://backbonejs.org/#View).
+- **WelcomeView**
+	- Does not need a model
+	- Renders an text input field for the nickname and a link to `#play`
+- **RankingView**
+	- Renders a list with the top players from a synced `Ranking` (collection)
+	
+Create a [router](http://backbonejs.org/#Router) and define three routes:
 
-Create these views:
+- `'#'` -- a root route that shows the `WelcomeView`
+- `'#game'` -- picks the nickname set in `WelcomeView`, sets it in the `Game` model and shows the `GameView`
+- `'#ranking´` -- shows the `RankingView`
 
-- **GameView**
-	- Its model will be an instance of `Game`
-	- This view will contain three other views: HudView, DiceView, and ControlsView
-	- The model will be shared with all the inner views
-- **HudView**
-	- The method `render` uses a [template](http://underscorejs.org/#template) to render the following information:
-		- Victory points
-		- Score
-		- Shots
-		- Brains
-	- Registers the `render` method on the model's `played` event
-- **ControlsView**
-	- Renders two buttons, one that says "roll" and one that says "stop"
-	- Registers callbacks for the `click` event on each button, that calls the model's `play` method with the corresponding action
-- **DiceView**
-	- Contains three inner DieView
-	- Registers `render` on the model's `played` event
-	- The `render` method delegates the display of each rolled die to each inner view
-- **DieView**
-	- Renders `color` and `face` for a Die
+Add a link somewhere in the HTML for `#ranking`.
 
 ## Useful links
 
@@ -54,4 +44,3 @@ Create these views:
 [Part3]: https://github.com/R42/zd-client/tree/part3
 [Part4]: https://github.com/R42/zd-client/tree/part4
 [live]: http://playzd.r42.in/
-
