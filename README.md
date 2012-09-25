@@ -1,25 +1,18 @@
-# Part3
+# Part3 - Road to Part4
 
-### Objective: Add client-side routing
+### Objective: Add Socket.IO notifications
 
-Create two more views:
+The same server you have been using is also a Socket.IO endpoint.
+It broadcasts some key events.
 
-- **WelcomeView**
-	- Does not need a model
-	- Renders an text input field for the nickname and a link to `#play`
-- **RankingView**
-	- Renders a list with the top players from a synced `Ranking` (collection)
-	
-Create a [router](http://backbonejs.org/#Router) and define three routes:
+[Take a look at the events and how to subscribe][notifications].
 
-- `'#'` -- a root route that shows the `WelcomeView`
-- `'#game'` -- picks the nickname set in `WelcomeView`, sets it in the `Game` model and shows the `GameView`
-- `'#ranking´` -- shows the `RankingView`
-
-Add a link somewhere in the HTML for `#ranking`.
+##### Now go add some notifications to your app :)
 
 ## Useful links
 
+- [Server events and how to subscribe][notifications]
+- [Socket.IO]
 - [The ZD API][API]
 - [Backbone API][Backbone]
 - [Underscore]
@@ -32,6 +25,8 @@ Add a link somewhere in the HTML for `#ranking`.
 	- [Part3]
 - [Zombie Dice Live!][live]
 
+[Socket.IO]: http://socket.io/
+[notifications]: https://github.com/R42/zd-server/wiki/Notifications 
 [API]: https://github.com/R42/zd-server/wiki/api
 [Backbone]: http://backbonejs.org/
 [Underscore]: http://underscorejs.org/
