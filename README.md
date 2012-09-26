@@ -1,4 +1,3 @@
-
 # Part1 - Road to Part2
 
 ### Objective: Create views to interact with the models
@@ -28,7 +27,7 @@ Create these views:
 - **DieView**
 	- Renders `color` and `face` for a Die
 
-#### [When you're ready advance to the next part][Part1]
+#### [When you're ready advance to the next part][Part2]
 
 ## Useful links
 
