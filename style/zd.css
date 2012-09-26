@@ -392,6 +392,7 @@
   position: absolute;
   top: 5px;
   left: 5px;
+  word-spacing: 7px;
 }
 
 .socialBox .notification {
