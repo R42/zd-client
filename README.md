@@ -18,7 +18,7 @@ Create a [router](http://backbonejs.org/#Router) and define three routes:
 
 Add a link somewhere in the HTML for `#ranking`.
 
-#### [When you're ready advance to the next part][Part1]
+#### [When you're ready advance to the next part][Part3]
 
 ## Useful links
 
